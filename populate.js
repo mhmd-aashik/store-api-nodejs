@@ -11,8 +11,9 @@ const start = async () => {
     await Product.deleteMany();
     await Product.create(jsonProducts);
 
-    console.log("🟢 db connected");
+    process.exit(0);
   } catch (error) {
+    process.exit(1);
     console.log(error);
   }
 };
